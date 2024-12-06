@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.3.0-release.2](https://github.com/albertosml/semantic-release/compare/3.3.0-release.1...3.3.0-release.2) (2024-12-06)
+
+### 📦️ Build and CI
+
+* dfkj ([0ec8285](https://github.com/albertosml/semantic-release/commit/0ec8285b963ce567dd9ee3ad410c9272c3a1ab9b))
+
+### 🔥 Hotfix 🔥
+
+* j ([8d569fe](https://github.com/albertosml/semantic-release/commit/8d569fe95491dc2eeabb60a1ca4328f3a4ebfa9c))
+
 ## [3.3.0-release.1](https://github.com/albertosml/semantic-release/compare/3.2.2-release.1...3.3.0-release.1) (2024-12-06)
 
 ### ✨ Feature
