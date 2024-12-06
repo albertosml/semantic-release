@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.1.2](https://github.com/albertosml/semantic-release/compare/v3.1.1...v3.1.2) (2024-12-06)
+
+* additional module ([47253f6](https://github.com/albertosml/semantic-release/commit/47253f624b716c35c240315a8e235925b0c475c5))
+* configu ([3b02cb2](https://github.com/albertosml/semantic-release/commit/3b02cb2da23cadfa6ca7d0d2d369e348f6ca7e8f))
+* dlkfj ([adbd7d5](https://github.com/albertosml/semantic-release/commit/adbd7d5e8252b4f79671ee1879c71474e9380815))
+
+### 🐛 Bugfix
+
+* dlkfj ([69da182](https://github.com/albertosml/semantic-release/commit/69da182cbb5987a8b0c97d0812c71129c54fffb1))
+* flkjdfd ([f09a5fd](https://github.com/albertosml/semantic-release/commit/f09a5fd6930ecc411de87eecd20dc1a195dc1883))
+
+### 📝  Documentation
+
+* sdlkfj ([a83e38c](https://github.com/albertosml/semantic-release/commit/a83e38c8d2f98ad948e917964f1b59aedd3db34c))
+
+### ⚡️ Code Performance
+
+* cldsjf ([528f172](https://github.com/albertosml/semantic-release/commit/528f1720f3a4bab865f697e6a437f6c0e987fbf4))
+
 ## [3.1.1](https://github.com/albertosml/semantic-release/compare/v3.1.0...v3.1.1) (2024-12-06)
 
 # [3.1.0](https://github.com/albertosml/semantic-release/compare/v3.0.0...v3.1.0) (2024-12-06)
