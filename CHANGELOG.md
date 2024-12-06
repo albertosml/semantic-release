@@ -1,5 +1,18 @@
 # Changelog
 
+# [3.0.0](https://github.com/albertosml/semantic-release/compare/v2.0.0...v3.0.0) (2024-12-06)
+
+
+* Lj ([#4](https://github.com/albertosml/semantic-release/issues/4)) ([cd11225](https://github.com/albertosml/semantic-release/commit/cd1122561aee2a3bb6f0962087af399ff5bcc9af)), closes [#3](https://github.com/albertosml/semantic-release/issues/3)
+
+
+### BREAKING CHANGES
+
+* dflkjd
+
+* feat: klfkdf
+* lkñjkl
+
 # [2.0.0](https://github.com/albertosml/semantic-release/compare/v1.0.1...v2.0.0) (2024-12-06)
 
 
