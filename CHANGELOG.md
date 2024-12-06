@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.2.0](https://github.com/albertosml/semantic-release/compare/v3.1.2...v3.2.0) (2024-12-06)
+
+### ✨ Feature
+
+* rele ([ed27d45](https://github.com/albertosml/semantic-release/commit/ed27d459fb1f3a8ef83cdce474d46c092f0a4c61))
+
+### 📦️ Build and CI
+
+* Commit convention ([3419930](https://github.com/albertosml/semantic-release/commit/3419930f0226dea20ba6bac4442ffa0e4a369c47))
+* dslkjf ([bcc8c70](https://github.com/albertosml/semantic-release/commit/bcc8c7094bb9bd24e4e0b03c4b08ee9a8afd506e))
+
 ## [3.1.2](https://github.com/albertosml/semantic-release/compare/v3.1.1...v3.1.2) (2024-12-06)
 
 * additional module ([47253f6](https://github.com/albertosml/semantic-release/commit/47253f624b716c35c240315a8e235925b0c475c5))
