@@ -2,23 +2,58 @@
   "branches": ["main"],
   "plugins": [
     [
-      {
-        "preset": "conventionalcommits",
-        "parserOpts": {
-          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
-        },
-        "releaseRules": [
-          { "type": "docs", "release": "patch" },
-          { "type": "refactor", "release": "patch" },
-          { "type": "style", "release": "patch" },
-          { "type": "test", "release": "patch" },
-          { "type": "ci", "release": "patch" },
-          { "type": "chore", "release": "patch" },
-          { "type": "perf", "release": "patch" }
-        ]
-      }
+        "@semantic-release/commit-analyzer",
+        {
+            "preset": "conventionalcommits",
+            "releaseRules": [
+              { "type": "docs", "release": "patch" },
+              { "type": "refactor", "release": "patch" }
+            ]
+        }
     ],
-    "@semantic-release/release-notes-generator",
+    [
+        "@semantic-release/release-notes-generator",
+        {
+            "preset": "conventionalcommits",
+            "presetConfig": {
+              "types": [
+                {
+                  "type": "breaking",
+                  "section": "❗ Breaking ❗",
+                  "hidden": false
+                },
+                { "type": "feat", "section": "✨ Feature", "hidden": false },
+                { "type": "fix", "section": "🐛 Bugfix", "hidden": false },
+                { "type": "docs", "section": "📝  Documentation", "hidden": false },
+                {
+                  "type": "chore",
+                  "section": "🔨  Misc.",
+                  "hidden": false
+                },
+                {
+                  "type": "ci",
+                  "hidden": false
+                },
+                {
+                  "type": "refactor",
+                  "section": "⚡️ Code Performance",
+                  "hidden": false
+                },
+                {
+                  "type": "test",
+                  "section": "🧪 Code Test",
+                  "hidden": false
+                },
+                {
+                  "type": "style",
+                  "section": "💄 Design",
+                  "hidden": false
+                },
+                { "type": "hotfix", "section": "🔥 Hotfix 🔥", "hidden": false }
+              ]
+            }
+        }
+    ],
     [
       "@semantic-release/changelog", {
         "changelogTitle": "# Changelog"
