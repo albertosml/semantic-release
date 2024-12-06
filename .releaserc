@@ -8,7 +8,10 @@
     [
         "@semantic-release/commit-analyzer",
         {
-            "preset": "conventionalcommits"
+            "preset": "conventionalcommits",
+            "releaseRules": [
+              { "type": "hotfix", "release": "patch" }
+            ]
         }
     ],
     [
@@ -25,7 +28,8 @@
                 { "type": "ci", "section": "📦️ Build and CI" },
                 { "type": "refactor", "section": "⚡️ Code Performance" },
                 { "type": "test", "section": "🧪 Code Test" },
-                { "type": "style", "section": "💄 Design" }
+                { "type": "style", "section": "💄 Design" },
+                { "type": "hotfix", "section": "🔥 Hotfix 🔥" }
               ]
             }
         }
