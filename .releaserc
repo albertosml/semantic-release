@@ -13,39 +13,15 @@
             "preset": "conventionalcommits",
             "presetConfig": {
               "types": [
-                {
-                  "type": "breaking",
-                  "section": "❗ Breaking ❗",
-                  "hidden": false
-                },
-                { "type": "feat", "section": "✨ Feature", "hidden": false },
-                { "type": "fix", "section": "🐛 Bugfix", "hidden": false },
-                { "type": "docs", "section": "📝  Documentation", "hidden": false },
-                {
-                  "type": "chore",
-                  "section": "🔨  Misc.",
-                  "hidden": false
-                },
-                {
-                  "type": "ci",
-                  "hidden": false
-                },
-                {
-                  "type": "refactor",
-                  "section": "⚡️ Code Performance",
-                  "hidden": false
-                },
-                {
-                  "type": "test",
-                  "section": "🧪 Code Test",
-                  "hidden": false
-                },
-                {
-                  "type": "style",
-                  "section": "💄 Design",
-                  "hidden": false
-                },
-                { "type": "hotfix", "section": "🔥 Hotfix 🔥", "hidden": false }
+                { "type": "breaking", "section": "❗ Breaking ❗" },
+                { "type": "feat", "section": "✨ Feature" },
+                { "type": "fix", "section": "🐛 Bugfix" },
+                { "type": "docs", "section": "📝  Documentation" },
+                { "type": "chore", "section": "🔨  Misc." },
+                { "type": "ci", "section": "📦️ Build and CI" },
+                { "type": "refactor", "section": "⚡️ Code Performance" },
+                { "type": "test", "section": "🧪 Code Test" },
+                { "type": "style", "section": "💄 Design" }
               ]
             }
         }
