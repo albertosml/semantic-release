@@ -1,5 +1,17 @@
 # Changelog
 
+# [2.0.0](https://github.com/albertosml/semantic-release/compare/v1.0.1...v2.0.0) (2024-12-06)
+
+
+### Features
+
+* fjdlfkdsj ([#2](https://github.com/albertosml/semantic-release/issues/2)) ([faa5f7b](https://github.com/albertosml/semantic-release/commit/faa5f7bce67a8812c1b5b68e13cc8f8cf3fb83ff))
+
+
+### BREAKING CHANGES
+
+* dflkjd
+
 ## [1.0.1](https://github.com/albertosml/semantic-release/compare/v1.0.0...v1.0.1) (2024-12-06)
 
 
