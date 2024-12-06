@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.3.0-release.1](https://github.com/albertosml/semantic-release/compare/3.2.2-release.1...3.3.0-release.1) (2024-12-06)
+
+### ✨ Feature
+
+* j ([657f515](https://github.com/albertosml/semantic-release/commit/657f5156bd2733999ae5646dd25ca3960f63cd4d))
+
 ## [3.2.2-release.1](https://github.com/albertosml/semantic-release/compare/v3.2.1...3.2.2-release.1) (2024-12-06)
 
 ### 🐛 Bugfix
