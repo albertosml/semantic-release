@@ -1,7 +1,7 @@
 {
   "branches": [
     "main",
-    { "name": "(hotfix|release|bugfix|feature)/*", "channel": "rc", "prerelease": true }
+    { "name": "(hotfix|release|bugfix|feature)/*", "prerelease": "rc" }
   ],
   "tagFormat": "${version}",
   "plugins": [
