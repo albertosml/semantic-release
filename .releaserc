@@ -1,7 +1,7 @@
 {
   "branches": [
     "main",
-    { "name": "release", "prerelease": true }
+    { "name": "(hotfix|release|bugfix|feature)/", "channel": "rc", "prerelease": true }
   ],
   "tagFormat": "${version}",
   "plugins": [
@@ -20,15 +20,16 @@
             "preset": "conventionalcommits",
             "presetConfig": {
               "types": [
-                { "type": "breaking", "section": "❗ Breaking ❗" },
+                { "type": "breaking", "section": "❗ Breaking changes ❗" },
                 { "type": "feat", "section": "✨ Feature" },
                 { "type": "fix", "section": "🐛 Bugfix" },
                 { "type": "docs", "section": "📝  Documentation" },
-                { "type": "chore", "section": "🔨  Misc." },
+                { "type": "chore", "section": "🔨  Maintenance" },
                 { "type": "ci", "section": "📦️ Build and CI" },
-                { "type": "refactor", "section": "⚡️ Code Performance" },
+                { "type": "refactor", "section": " Refactor" },
+                { "type": "perf", "section": "⚡️ Code Performance" },
                 { "type": "test", "section": "🧪 Code Test" },
-                { "type": "style", "section": "💄 Design" },
+                { "type": "style", "section": "💄 Style" },
                 { "type": "hotfix", "section": "🔥 Hotfix 🔥" }
               ]
             }
