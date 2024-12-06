@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.1](https://github.com/albertosml/semantic-release/compare/v1.0.0...v1.0.1) (2024-12-06)
+
+
+### Performance Improvements
+
+* c ([4e2d945](https://github.com/albertosml/semantic-release/commit/4e2d9456c2b060e29dcd77310b4638d689e09928))
+
+
+### Reverts
+
+* c ([48bd2ee](https://github.com/albertosml/semantic-release/commit/48bd2ee546b763641b6ea008bb21ea0e2a75eafb))
+
 # 1.0.0 (2024-12-06)
 
 
