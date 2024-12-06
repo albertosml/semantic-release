@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.3.0-release.2](https://github.com/albertosml/semantic-release/compare/3.3.0-release.1...3.3.0-release.2) (2024-12-06)
+
+### 📦️ Build and CI
+
+* dfkj ([0ec8285](https://github.com/albertosml/semantic-release/commit/0ec8285b963ce567dd9ee3ad410c9272c3a1ab9b))
+
+### 🔥 Hotfix 🔥
+
+* j ([8d569fe](https://github.com/albertosml/semantic-release/commit/8d569fe95491dc2eeabb60a1ca4328f3a4ebfa9c))
+
+## [3.3.0-release.1](https://github.com/albertosml/semantic-release/compare/3.2.2-release.1...3.3.0-release.1) (2024-12-06)
+
+### ✨ Feature
+
+* j ([657f515](https://github.com/albertosml/semantic-release/commit/657f5156bd2733999ae5646dd25ca3960f63cd4d))
+
+## [3.2.2-release.1](https://github.com/albertosml/semantic-release/compare/v3.2.1...3.2.2-release.1) (2024-12-06)
+
+### 🐛 Bugfix
+
+* run ([6f3f0e8](https://github.com/albertosml/semantic-release/commit/6f3f0e842c0170695787d49ce0e1439c6aba44db))
+
+### 📦️ Build and CI
+
+* config ([24520b1](https://github.com/albertosml/semantic-release/commit/24520b11c470969169bf22c544c9bc53b4ce2068))
+
 ## [3.2.1](https://github.com/albertosml/semantic-release/compare/v3.2.0...v3.2.1) (2024-12-06)
 
 ### 🐛 Bugfix
