@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.3.2-rc.1](https://github.com/albertosml/semantic-release/compare/3.3.1...3.3.2-rc.1) (2024-12-07)
+
+### 🐛 Bugfix
+
+* final change ([e3441c9](https://github.com/albertosml/semantic-release/commit/e3441c9e40bd96a7c239fc50e9e83d1c0705c26c))
+
 ## [3.3.1](https://github.com/albertosml/semantic-release/compare/3.3.0...3.3.1) (2024-12-07)
 
 ### 🐛 Bugfix
