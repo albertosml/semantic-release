@@ -5,6 +5,10 @@ on:
     branches:
       - main
       - release/*
+      # TODO: Ver caso para desplegar y hacer pruebas en alpha
+      - hotfix/*
+      - bugfix/*
+      - feature/*
 
 jobs:
   release:
