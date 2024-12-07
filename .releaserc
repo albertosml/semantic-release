@@ -2,7 +2,7 @@
   "branches": [
     "main",
     { "name": "release/*", "prerelease": "rc" },
-    { "name": "feature/*", "channel": "${name}" }
+    { "name": "feature/*", "prerelease": "${name.replace(/^feature\\//g, '')" }
   ],
   "tagFormat": "${version}",
   "plugins": [
