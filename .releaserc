@@ -1,8 +1,8 @@
 {
   "branches": [
     "main",
-    { "name": "release/*", "prerelease": "${name.replace(/.+/, 'rc')"},
-    { "name": "(feature|bugfix|hotfix)/*", "prerelease": "${name.replace(/^(feature|bugfix|hotfix)\\//g, '')}"}
+    { "name": "release/*", "prerelease": "${name.replace(/^release\\//g, 'rc.')}"},
+    { "name": "(feature|bugfix|hotfix)/*", "prerelease": "${name.replace(/\\//g, '.')}"}
   ],
   "tagFormat": "${version}",
   "plugins": [
@@ -48,7 +48,14 @@
         "message": "release: ${nextRelease.version} version"
       }
     ],
-    "@semantic-release/github"
+    [
+      "@semantic-release/github", {
+        "failComment": false,
+        "failTitle": false,
+        "labels": false,
+        "releasedLabels": false
+      }
+    ]
   ],
   "repositoryUrl": "git@github.com:albertosml/semantic-release.git"
 }
