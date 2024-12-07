@@ -6,8 +6,6 @@ on:
       - main
       - release/*
       - hotfix/*
-      - bugfix/*
-      - feature/*
 
 jobs:
   release:
