@@ -30,10 +30,15 @@
 
 * final change ([e3441c9](https://github.com/albertosml/semantic-release/commit/e3441c9e40bd96a7c239fc50e9e83d1c0705c26c))
 
-### 📦️ Build and CI
+### 🔨  Maintenance
 
-* kdj ([5c28fc3](https://github.com/albertosml/semantic-release/commit/5c28fc3e206e6dab0c40a8b856f8085baa9f15d9))
-* lj ([88ebcec](https://github.com/albertosml/semantic-release/commit/88ebcec024f636ad6f71974b97777eea0bf27b46))
+* release 3.3.2-rc.1 ([8937591](https://github.com/albertosml/semantic-release/commit/893759199dda910dd43c35c7f716b973ce8f452d))
+
+## [3.3.2-rc.1](https://github.com/albertosml/semantic-release/compare/3.3.1...3.3.2-rc.1) (2024-12-07)
+
+### 🐛 Bugfix
+
+* final change ([e3441c9](https://github.com/albertosml/semantic-release/commit/e3441c9e40bd96a7c239fc50e9e83d1c0705c26c))
 
 ## [3.3.1](https://github.com/albertosml/semantic-release/compare/3.3.0...3.3.1) (2024-12-07)
 
