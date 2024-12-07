@@ -1,7 +1,8 @@
 {
   "branches": [
     "main",
-    { "name": "feature/*", "prerelease": "rc" }
+    { "name": "release/*", "prerelease": "${name.replace(/.+/, 'rc')"},
+    { "name": "(feature|bugfix|hotfix)/*", "prerelease": "${name.replace(/^(feature|bugfix|hotfix)\\//g, '')}"}
   ],
   "tagFormat": "${version}",
   "plugins": [
@@ -25,6 +26,7 @@
                 { "type": "fix", "section": "🐛 Bugfix" },
                 { "type": "docs", "section": "📝  Documentation" },
                 { "type": "chore", "section": "🔨  Maintenance" },
+                { "type": "release", "hidden": true},
                 { "type": "ci", "section": "📦️ Build and CI" },
                 { "type": "refactor", "section": " Refactor" },
                 { "type": "perf", "section": "⚡️ Code Performance" },
@@ -43,7 +45,7 @@
     [
       "@semantic-release/git", {
         "assets": ["CHANGELOG.md"],
-        "message": "chore: release ${nextRelease.version}\n\n${nextRelease.notes}"
+        "message": "release: ${nextRelease.version} version"
       }
     ],
     "@semantic-release/github"
