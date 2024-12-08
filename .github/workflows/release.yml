@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - main
-      - release/*
-      # TODO: Ver caso para desplegar y hacer pruebas en alpha
-      - hotfix/*
-      - bugfix/*
-      - feature/*
 
 jobs:
   release:
@@ -17,7 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Semantic Release
-        id: release
         uses: cycjimmy/semantic-release-action@v4
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -27,13 +21,3 @@ jobs:
             @semantic-release/changelog
             @semantic-release/git
             conventional-changelog-conventionalcommits
-      - name: Create tag
-        uses: actions/github-script@v5
-        with:
-          script: |
-            github.rest.git.createRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: 'refs/tags/${{ steps.release.outputs.new_release_version }}',
-              sha: context.sha
-            })
