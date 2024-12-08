@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - release/*
 
 jobs:
   release:
@@ -17,6 +16,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          dry_run: true
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
