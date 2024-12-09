@@ -1,0 +1,53 @@
+name: Create staging tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        type: choice
+        required: true
+        description: Tag type (release candidate or beta)
+        options: 
+        - rc
+        - beta
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Semantic Release
+        id: release
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          dry_run: true
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            conventional-changelog-conventionalcommits
+      - name: Calculate tag version
+        id: version
+        run: |
+            major=${{ steps.release.outputs.new_release_major_version }}
+            minor=${{ steps.release.outputs.new_release_minor_version }}
+            patch=${{ steps.release.outputs.new_release_patch_version }}
+
+            tag_type=${{ github.event.inputs.type }}
+
+            current_version_number=$(git tag --list $major.$minor.$patch-$tag_type.* | wc -l)
+            next_version_number=$(($current_version_number + 1))
+
+            echo "new_tag_version=$major.$minor.$patch-$tag_type.$next_version_number" >> "$GITHUB_OUTPUT"
+      - name: Create tag
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/${{ steps.version.outputs.new_tag_version }}',
+              sha: context.sha
+            })

@@ -1,0 +1,40 @@
+name: Create development tag
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Semantic Release
+        id: release
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          dry_run: true
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            conventional-changelog-conventionalcommits
+      - name: Create tag
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const major = '${{ steps.release.outputs.new_release_major_version }}'
+            const minor = '${{ steps.release.outputs.new_release_minor_version }}'
+            const patch = '${{ steps.release.outputs.new_release_patch_version }}'
+
+            const new_release_version = `${major}.${minor}.${patch}`
+
+            const short_sha = '${{ github.sha }}'.substring(0, 7)
+
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${new_release_version}-alpha+${short_sha}`,
+              sha: context.sha
+            })
