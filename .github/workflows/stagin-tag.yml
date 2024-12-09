@@ -1,9 +1,15 @@
-name: Create prerelease tag
+name: Create staging tag
 
 on:
-  push:
-    branches:
-      - release/*
+  workflow_dispatch:
+    inputs:
+      type:
+        type: choice
+        required: true
+        description: Tag type (release candidate or beta)
+        options: 
+        - rc
+        - beta
 
 jobs:
   release:
@@ -22,16 +28,19 @@ jobs:
             @semantic-release/changelog
             @semantic-release/git
             conventional-changelog-conventionalcommits
-      - name: Calculate release candidate number
-        id: calc-rc
+      - name: Calculate tag version
+        id: version
         run: |
             major=${{ steps.release.outputs.new_release_major_version }}
             minor=${{ steps.release.outputs.new_release_minor_version }}
             patch=${{ steps.release.outputs.new_release_patch_version }}
 
-            version_release_candidates_number=$(git tag --list $major.$minor.$patch-rc.* | wc -l)
-            rc_number=$(($version_release_candidates_number + 1))
-            echo "rc_new_version=$major.$minor.$patch-rc.$rc_number" >> "$GITHUB_OUTPUT"
+            tag_type=${{ github.event.inputs.type }}
+
+            current_version_number=$(git tag --list $major.$minor.$patch-$tag_type.* | wc -l)
+            next_version_number=$(($current_version_number + 1))
+
+            echo "new_tag_version=$major.$minor.$patch-$tag_type.$next_version_number" >> "$GITHUB_OUTPUT"
       - name: Create tag
         uses: actions/github-script@v5
         with:
@@ -39,6 +48,6 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/${{ steps.calc-rc.outputs.rc_new_version }}',
+              ref: 'refs/tags/${{ steps.version.outputs.new_tag_version }}',
               sha: context.sha
             })
