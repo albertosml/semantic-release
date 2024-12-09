@@ -31,7 +31,7 @@ jobs:
 
             version_release_candidates_number=$(git tag --list $major.$minor.$patch-rc.* | wc -l)
             rc_number=$(($version_release_candidates_number + 1))
-            echo "rc_new_version="$major.$minor.$patch-rc.$rc_number" >> "$GITHUB_OUTPUT"
+            echo "rc_new_version=$major.$minor.$patch-rc.$rc_number" >> "$GITHUB_OUTPUT"
       - name: Create tag
         uses: actions/github-script@v5
         with:
