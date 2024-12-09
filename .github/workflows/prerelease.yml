@@ -24,6 +24,11 @@ jobs:
             conventional-changelog-conventionalcommits
       - name: Create tag
         run: |
-            release_candidate_number=$(git tag --list '${{ steps.release.outputs.new_release_version }}-rc.*' | wc -l) + 1
+            major=${{ steps.release.outputs.new_release_major_version }}
+            minor=${{ steps.release.outputs.new_release_minor_version }}
+            patch=${{ steps.release.outputs.new_release_patch_version }}
+
+            version_release_candidates_number=$(git tag --list $major.$minor.$patch-rc.* | wc -l)
+            release_candidate_number=$(($version_release_candidates_number + 1))
 
             git tag ${{ steps.release.outputs.new_release_version }}-rc.$release_candidate_number
