@@ -32,7 +32,7 @@ jobs:
             const minor = '${{ steps.release.outputs.new_release_minor_version }}'
             const patch = '${{ steps.release.outputs.new_release_patch_version }}'
 
-            const new_release_version = '${major}.${minor}.${patch}'
+            const new_release_version = `${major}.${minor}.${patch}`
 
             console.log("New release version: ", new_release_version)
 
@@ -43,6 +43,6 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/${{ new_release_version }}-alpha+${{ short_sha }}',
+              ref: `refs/tags/${new_release_version}-alpha+${short_sha}`,
               sha: context.sha
             })
