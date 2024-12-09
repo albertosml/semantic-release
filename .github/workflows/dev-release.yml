@@ -28,9 +28,15 @@ jobs:
         uses: actions/github-script@v5
         with:
           script: |
+            const major = '${{ steps.release.outputs.new_release_major_version }}'
+            const minor = '${{ steps.release.outputs.new_release_minor_version }}'
+            const patch = '${{ steps.release.outputs.new_release_patch_version }}'
+
+            const new_release_version = `${major}.${minor}.${patch}`
+
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/${{ steps.release.outputs.new_release_version }}-dev+${{ github.sha }}',
+              ref: 'refs/tags/${new_release_version}-dev+${{ github.sha }}',
               sha: context.sha
             })
