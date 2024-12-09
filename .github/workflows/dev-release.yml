@@ -1,9 +1,11 @@
-name: Create prerelease tag
+name: Create development tag
 
 on:
   push:
     branches:
-      - release/*
+      - hotfix/*
+      - bugfix/*
+      - feature/*
 
 jobs:
   release:
@@ -23,7 +25,12 @@ jobs:
             @semantic-release/git
             conventional-changelog-conventionalcommits
       - name: Create tag
-        run: |
-            release_candidate_number=$(git tag --list '${{ steps.release.outputs.new_release_version }}-rc.*' | wc -l) + 1
-
-            git tag ${{ steps.release.outputs.new_release_version }}-rc.$release_candidate_number
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/${{ steps.release.outputs.new_release_version }}-dev+${{ github.sha }}',
+              sha: context.sha
+            })
