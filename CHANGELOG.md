@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.4.1](https://github.com/albertosml/semantic-release/compare/3.4.0...3.4.1) (2024-12-09)
+
+### 🐛 Bugfix
+
+* alberto ([a7c3867](https://github.com/albertosml/semantic-release/commit/a7c38673a375ac8d0eda395f0e2d8a314c302cbe))
+
+### 🔨  Maintenance
+
+* rename file ([64445c9](https://github.com/albertosml/semantic-release/commit/64445c969e6edb241af8612cc5a2891a4446bc93))
+
 ## [3.4.0](https://github.com/albertosml/semantic-release/compare/3.3.2...3.4.0) (2024-12-09)
 
 ### ✨ Feature
