@@ -1,5 +1,40 @@
 # Changelog
 
+## [3.4.0](https://github.com/albertosml/semantic-release/compare/3.3.2...3.4.0) (2024-12-09)
+
+### ✨ Feature
+
+* kdjf ([2f461c6](https://github.com/albertosml/semantic-release/commit/2f461c6ce46214be0bb09caee4ad9f7f0b472e29))
+* ldksjf ([ff1a547](https://github.com/albertosml/semantic-release/commit/ff1a54780511e730e2a723cbab7a598b83b972f2))
+
+### 🐛 Bugfix
+
+* a ([09436c4](https://github.com/albertosml/semantic-release/commit/09436c4501b311c9e1fbe35e1a645d40a7ff7d92))
+* a ver ([c3edc63](https://github.com/albertosml/semantic-release/commit/c3edc63b59a0b60412923bb033a3539ba82cdea7))
+* alcachofa ([63c413b](https://github.com/albertosml/semantic-release/commit/63c413bdd5ce903fd0ffd888edebb73e3bcb2dff))
+* c ([80eabe6](https://github.com/albertosml/semantic-release/commit/80eabe6670cabf694abe6880b332c2b3080f8077))
+* intento final ([284c032](https://github.com/albertosml/semantic-release/commit/284c0324feee6e06fbbb608dd2c9f82c904675a4))
+* john ([60d514b](https://github.com/albertosml/semantic-release/commit/60d514b4f05ac2c0ec440f85792626144cea6d63))
+* lechugas ([ed7d2eb](https://github.com/albertosml/semantic-release/commit/ed7d2ebaa9790e7c92266fdfac90b9ac54757478))
+* lechugas ([e24d618](https://github.com/albertosml/semantic-release/commit/e24d618cccc90aab6b58c3ba7707591d4bfdfe9b))
+* ljh ([44276c8](https://github.com/albertosml/semantic-release/commit/44276c8cfd6e4c10f187831f2c317b063210a248))
+* lkejf ([9baf621](https://github.com/albertosml/semantic-release/commit/9baf621bab00207f49cd3feb9484e79c1488f584))
+* new fix ([a611d8c](https://github.com/albertosml/semantic-release/commit/a611d8c915eec9d10c11a47231c87719d1c576f2))
+* new tags ([35839b1](https://github.com/albertosml/semantic-release/commit/35839b17ae8b92c8d2bbfa93c04af27d983ebfbc))
+* pec ([320b85d](https://github.com/albertosml/semantic-release/commit/320b85d99a4dd9652fc88e5fc1eaf56cae8369a5))
+* podemos ([4a07214](https://github.com/albertosml/semantic-release/commit/4a0721409f7792aa36ba80c68ab7175b3721498c))
+* sdlj ([e7a7882](https://github.com/albertosml/semantic-release/commit/e7a7882776933ace334bfcbf0fb23397d4930e15))
+* uxuf +semver: none ([655ab2c](https://github.com/albertosml/semantic-release/commit/655ab2c2d6f6110d47921e1ef123f90576928d2b))
+* vamos ([743f00d](https://github.com/albertosml/semantic-release/commit/743f00d0b8630c23230b8db18ff971baf3ac1998))
+* venga ([e5f97c7](https://github.com/albertosml/semantic-release/commit/e5f97c7611bceb915ae73e61d392aa0fae3d9b7f))
+
+### 🔨  Maintenance
+
+* a ([aa525c5](https://github.com/albertosml/semantic-release/commit/aa525c5c491dbd9893d2e34bc647e54021a9fa0a))
+* dkfj ([46a46e4](https://github.com/albertosml/semantic-release/commit/46a46e4c13776af6888c0aec512f8d8d1d11d474))
+* remove character ([07f3afd](https://github.com/albertosml/semantic-release/commit/07f3afd515f5379fc6883f9d621b9b1c8329d4c1))
+* Vamos ([ac60363](https://github.com/albertosml/semantic-release/commit/ac60363bda45954fb9a3d0ee818095080665daab))
+
 ## [3.3.2](https://github.com/albertosml/semantic-release/compare/3.3.1...3.3.2) (2024-12-07)
 
 ### 🐛 Bugfix
