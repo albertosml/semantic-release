@@ -34,9 +34,11 @@ jobs:
 
             const new_release_version = `${major}.${minor}.${patch}`
 
+            const short_sha = '{{ github.sha }}'.substring(0, 8)
+
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/${new_release_version}-dev+${{ github.sha }}',
+              ref: 'refs/tags/${{ new_release_version }}-alpha+${{ short_sha }}',
               sha: context.sha
             })
