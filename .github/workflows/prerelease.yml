@@ -29,6 +29,7 @@ jobs:
             patch=${{ steps.release.outputs.new_release_patch_version }}
 
             echo $major.$minor.$patch
+            echo ${{ steps.release.outputs.new_release_version }}
 
             version_release_candidates_number=$(git tag --list $major.$minor.$patch-rc.* | wc -l)
             release_candidate_number=$(($version_release_candidates_number + 1))
