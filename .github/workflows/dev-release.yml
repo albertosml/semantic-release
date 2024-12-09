@@ -34,7 +34,11 @@ jobs:
 
             const new_release_version = '${major}.${minor}.${patch}'
 
+            console.log("New release version: ", new_release_version)
+
             const short_sha = '${{ github.sha }}'.substring(0, 8)
+
+            console.log("OLE: ", short_sha)
 
             github.rest.git.createRef({
               owner: context.repo.owner,
