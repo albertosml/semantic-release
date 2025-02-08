@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.0.0](https://github.com/albertosml/semantic-release/compare/3.4.1...4.0.0) (2025-02-08)
+
+### ⚠ BREAKING CHANGES
+
+* kldj
+
+### 🔨  Maintenance
+
+* deploy azure ([1fe7bea](https://github.com/albertosml/semantic-release/commit/1fe7beabaa768c361915244eb56447fc359cc039))
+* release 4.0.0 ([469415e](https://github.com/albertosml/semantic-release/commit/469415e345f45fb23327b158ff9bb89f40f39081)), closes [#14](https://github.com/albertosml/semantic-release/issues/14)
+
+###  Refactor
+
+* dfklj ([#4](https://github.com/albertosml/semantic-release/issues/4)) ([40a6924](https://github.com/albertosml/semantic-release/commit/40a6924ed8c55aa4784758345c59c55962cba454)), closes [#14](https://github.com/albertosml/semantic-release/issues/14)
+
 ## [4.0.0](https://github.com/albertosml/semantic-release/compare/3.4.1...4.0.0) (2024-12-16)
 
 ### ⚠ BREAKING CHANGES
