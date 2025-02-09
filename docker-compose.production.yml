@@ -1,0 +1,9 @@
+services:
+  frontend:
+    image: albertosml/frontend
+    ports:
+      - "8080:8080"
+  backend:
+    image: albertosml/backend:latest
+    ports:
+      - "8888:8888"

@@ -1,0 +1,30 @@
+name: Docker compose deploy azure
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build the Docker image
+        run: docker compose build
+
+      - name: Azure authentication
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.ARM_CLIENT_ID }}
+          tenant-id: ${{ secrets.ARM_TENANT_ID }}
+          subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: my-test
+          multi-container-config-type: "compose"
+          multi-container-config-file: "docker-compose.production.yml"
+        env:
+          AZURE_WEBAPP_CONTAINER_WORKER_TYPE: "compose"
