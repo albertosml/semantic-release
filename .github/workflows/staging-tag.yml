@@ -10,9 +10,18 @@ on:
         options: 
         - rc
         - beta
+      deploy:
+        type: choice
+        required: true
+        description: What to deploy (frontend, backend or all)
+        options: 
+        - frontend
+        - backend
+        - all
 
 jobs:
-  release:
+  create-release:
+    name: Create release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,3 +60,56 @@ jobs:
               ref: 'refs/tags/${{ steps.version.outputs.new_tag_version }}',
               sha: context.sha
             })
+    outputs:
+      tagVersion: ${{ steps.version.outputs.new_tag_version }}
+  upload-image:
+    name: Upload Docker image
+    runs-on: ubuntu-latest
+    needs: [create-release]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      # - name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v3
+      # - name: Set up Docker Buildx
+      #   uses: docker/setup-buildx-action@v3
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/book-recommender:${{ needs.create-release.outputs.tagVersion }}
+  deploy:
+    name: Deploy
+    needs: [upload-image]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./deploy
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      TF_VAR_image_tag: ${{ needs.create-release.outputs.tagVersion }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+    - name: Terraform Init
+      run: terraform init
+    - name: Terraform fmt
+      run: terraform fmt -check
+    - name: Terraform Validate
+      run: terraform validate -no-color
+    - name: Terraform Plan
+      run: terraform plan -no-color
+    - name: Terraform Apply
+      run: terraform apply -auto-approve

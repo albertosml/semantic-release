@@ -36,9 +36,6 @@ resource "azapi_update_resource" "enable_sidecar" {
       }
     }
   }
-  #lifecycle {
-  #  replace_triggered_by = [azurerm_linux_web_app.myapp]
-  #}
 }
 
 resource "azapi_resource" "web_container" {
@@ -49,7 +46,7 @@ resource "azapi_resource" "web_container" {
   name      = "main"
   body = {
     properties = {
-      image      = "index.docker.io/albertosml/book-recommender:latest"
+      image      = "index.docker.io/albertosml/book-recommender:${var.image_tag}"
       isMain     = true
       targetPort = "3000"
     }
