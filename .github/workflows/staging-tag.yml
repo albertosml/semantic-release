@@ -51,7 +51,7 @@ jobs:
 
             echo "new_tag_version=$major.$minor.$patch-$tag_type.$next_version_number" >> "$GITHUB_OUTPUT"
       - name: Create tag
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         with:
           script: |
             github.rest.git.createRef({
