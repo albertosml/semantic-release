@@ -86,7 +86,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/book-recommender:${{ needs.create-release.outputs.tagVersion }}
   deploy:
     name: Deploy
-    needs: [upload-image]
+    needs: [create-release, upload-image]
     runs-on: ubuntu-latest
     defaults:
       run:
