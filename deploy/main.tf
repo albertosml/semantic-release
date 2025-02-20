@@ -1,20 +1,19 @@
 # Source: https://learn.microsoft.com/es-es/azure/app-service/provision-resource-terraform
-resource "azurerm_resource_group" "rg" {
-  name     = "book-recommender"
-  location = "West Europe"
+data "azurerm_resource_group" "rg" {
+  name = "book-recommender"
 }
 
 resource "azurerm_service_plan" "app_service_plan" {
   name                = "book-recommender-app-service-plan"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = data.azurerm_resource_group.rg.location
+  resource_group_name = data.azurerm_resource_group.rg.name
   os_type             = "Linux"
   sku_name            = "F1"
 }
 
 resource "azurerm_linux_web_app" "app" {
   name                = "book-recommender-web-app"
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = data.azurerm_resource_group.rg.name
   location            = azurerm_service_plan.app_service_plan.location
   service_plan_id     = azurerm_service_plan.app_service_plan.id
   depends_on          = [azurerm_service_plan.app_service_plan]
