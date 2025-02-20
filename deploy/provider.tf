@@ -14,7 +14,7 @@ terraform {
 
   backend "azurerm" {
     resource_group_name  = "book-recommender"
-    storage_account_name = "book-recommender-storage-account"
+    storage_account_name = "book-recommender-stoacc"
     container_name       = "tfstate"
     key                  = "book-recommender.tfstate"
   }
