@@ -47,7 +47,7 @@ resource "azapi_resource" "web_container" {
     properties = {
       image      = "index.docker.io/albertosml/book-recommender:${var.image_tag}"
       isMain     = true
-      targetPort = "3000"
+      targetPort = "4000"
     }
   }
 }
@@ -62,6 +62,20 @@ resource "azapi_resource" "solr_container" {
       image      = "index.docker.io/albertosml/solr-books"
       isMain     = false
       targetPort = "8983"
+    }
+  }
+}
+
+resource "azapi_resource" "mongo_container" {
+  depends_on = [azapi_update_resource.enable_sidecar]
+  type       = "Microsoft.Web/sites/sitecontainers@2024-04-01"
+  parent_id  = azurerm_linux_web_app.app.id
+  name       = "solr"
+  body = {
+    properties = {
+      image      = "index.docker.io/mongo:7.0.17-rc1-nanoserver"
+      isMain     = false
+      targetPort = "27017"
     }
   }
 }
