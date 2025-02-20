@@ -70,7 +70,7 @@ resource "azapi_resource" "mongo_container" {
   depends_on = [azapi_update_resource.enable_sidecar]
   type       = "Microsoft.Web/sites/sitecontainers@2024-04-01"
   parent_id  = azurerm_linux_web_app.app.id
-  name       = "solr"
+  name       = "mongo"
   body = {
     properties = {
       image      = "index.docker.io/mongo:7.0.17-rc1-nanoserver"
