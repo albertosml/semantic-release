@@ -4,6 +4,14 @@ resource "azurerm_resource_group" "rg" {
   location = "West Europe"
 }
 
+resource "azurerm_storage_account" "terraform_state" {
+  name                     = "book-recommender-storage-account"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
 resource "azurerm_service_plan" "app_service_plan" {
   name                = "book-recommender-app-service-plan"
   location            = azurerm_resource_group.rg.location

@@ -11,6 +11,13 @@ terraform {
     }
   }
   required_version = ">= 0.13.0"
+
+  backend "azurerm" {
+    resource_group_name  = "book-recommender"
+    storage_account_name = "book-recommender-storage-account"
+    container_name       = "tfstate"
+    key                  = "book-recommender.tfstate"
+  }
 }
 
 provider "azurerm" {
