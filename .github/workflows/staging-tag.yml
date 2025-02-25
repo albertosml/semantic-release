@@ -104,7 +104,7 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config="./${{ github.event.inputs.type }}.config"
     - name: Terraform fmt
       run: terraform fmt -check
     - name: Terraform Validate

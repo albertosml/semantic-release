@@ -17,7 +17,7 @@ terraform {
     resource_group_name  = "book-recommender"
     storage_account_name = "bookrecommenderstoacc"
     container_name       = "tfstate"
-    key                  = "book-recommender.tfstate"
+    key                  = ""
   }
 }
 
