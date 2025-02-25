@@ -1,8 +1,8 @@
-# Source: https://learn.microsoft.com/es-es/azure/app-service/provision-resource-terraform
 data "azurerm_resource_group" "rg" {
   name = "book-recommender"
 }
 
+# Source: https://learn.microsoft.com/es-es/azure/app-service/provision-resource-terraform
 resource "azurerm_service_plan" "app_service_plan" {
   name                = "book-recommender-app-service-plan"
   location            = data.azurerm_resource_group.rg.location
