@@ -110,6 +110,6 @@ jobs:
     - name: Terraform Validate
       run: terraform validate -no-color
     - name: Terraform Plan
-      run: terraform plan -no-color
+      run: terraform plan -no-color #-var-file="./vars/${{ github.event.inputs.type }}.tfvars"
     - name: Terraform Apply
       run: terraform apply -auto-approve
